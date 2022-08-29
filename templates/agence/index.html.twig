@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AgenceController!{% endblock %}
+
+{% block body %}
+
+
+{# <div class="container">
+<style>
+.container{
+    text-aligne: center;
+} #}
+</style>
+<div class="container-fluide  align-items-center my-3 ">
+		{% for vehicule in tabvehicules %}
+			<div class="carte">
+
+				<div class="card mb-3" style="max-width: 540px;">
+					<div class="row g-0">
+						<div class="col-md-4">
+							<img src="{{ vehicule.photo }}" class="img-fluid rounded-start" alt="...">
+						</div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<h5 class="card-title">{{ vehicule.titre}}</h5>
+								<p class="card-text">
+									{{ vehicule.description}}</p>
+								<p class="card-text">
+									<small class="text-muted">{{vehicule.prixJournalier}} €</small>
+								</p>
+								<a href="" class="btn btn-primary">Réserver</a>
+								<a href="{{ path('agence_show', {id: vehicule.id}) }}" class="btn btn-primary">Afficher</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+</div>
+		{% endfor %}
+</div>
+
+
+
+
+{% endblock %}
+
+
